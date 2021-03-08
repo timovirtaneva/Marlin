@@ -19,9 +19,6 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
-#pragma once
-
-#define CONFIG_EXAMPLES_DIR "Creality/Ender-3 V2"
 
 /**
  * Custom Boot Screen bitmap
