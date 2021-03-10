@@ -983,7 +983,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 54.29, -6.16, -0.55 }
+#define NOZZLE_TO_PROBE_OFFSET { 54.29, -6.16, -0.5 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -996,8 +996,7 @@
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Feedrate (mm/min) for the "accurate" probe of each point
-// #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST)
+#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
 
 /**
  * Multiple Probing
@@ -1129,7 +1128,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 340
+#define Z_MAX_POS 320
 
 /**
  * Software Endstops
@@ -1145,7 +1144,7 @@
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS)
   #define MIN_SOFTWARE_ENDSTOP_X
   #define MIN_SOFTWARE_ENDSTOP_Y
-  //#define MIN_SOFTWARE_ENDSTOP_Z
+  #define MIN_SOFTWARE_ENDSTOP_Z
 #endif
 
 // Max software endstops constrain movement within maximum coordinate bounds
@@ -1171,7 +1170,7 @@
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
-  #define FIL_RUNOUT_STATE     HIGH        // Pin state indicating that filament is NOT present.
+  #define FIL_RUNOUT_STATE     LOW        // Pin state indicating that filament is NOT present.
   #define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN           // Use internal pulldown for filament runout pins.
 
